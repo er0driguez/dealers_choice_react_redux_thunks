@@ -5,7 +5,9 @@ const path = require('path');
 const { sequelize, syncAndSeed, Book, Author } = require('./db/db');
 
 app.use('/dist', express.static(path.join(__dirname, 'dist')));
+app.use('/', express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res)=> res.sendFile(path.join(__dirname, 'index.html')));
+
 
 app.get('/api/books', async(req, res, next) => {
     try {
