@@ -9,12 +9,9 @@ import { createStore, combineReducers } from 'redux';
 import NavBar from './Nav';
 import Books from './Books';
 import Authors from './Authors';
-
+import CreateBook from './Create';
 
 const App = connect(
-    /*(state) => {
-        return state;
-    },*/
     null,
     (dispatch) => {
         return {
@@ -35,6 +32,7 @@ const App = connect(
                 <div id="body">
                     <h1>Sci-Fi Library</h1>
                     <NavBar />
+                    <CreateBook />
 
                     <p> Available Books </p>
                     <Books />

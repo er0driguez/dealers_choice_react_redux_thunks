@@ -32,6 +32,8 @@ const reducer = combineReducers({
     authors
 });
 
+const store = createStore(reducer, applyMiddleware(thunk)); 
+
 const loadBooks = () => {
     return async(dispatch) => {
         const response = await axios.get('/api/books')
@@ -50,18 +52,12 @@ const loadAuthors = () => {
 
 const createBook = () => {
     return async(dispatch) => {
-        const respone = await axios.post('/api/books')
+        const response = await axios.post('/api/books');
         const newBook = response.data
         dispatch({ type: CREATE_BOOK, newBook });
     }
 };
 
-const store = createStore(reducer, applyMiddleware(thunk)); 
-
 export { loadBooks, loadAuthors, createBook };
 export default store;
 
-/*
-
-
-*/
