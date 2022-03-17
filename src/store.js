@@ -53,8 +53,7 @@ const loadAuthors = () => {
 const createBook = () => {
     return async(dispatch) => {
         const response = await axios.post('/api/books');
-        const newBook = response.data
-        dispatch({ type: CREATE_BOOK, newBook });
+        dispatch({ type: CREATE_BOOK, book: response.data });
     }
 };
 

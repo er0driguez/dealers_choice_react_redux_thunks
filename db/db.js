@@ -25,7 +25,7 @@ const Author = sequelize.define('author', {
 });
 
 Book.generateRandom = function() {
-    return this.create({ name: `Sci-Fi Book Volume ${Math.floor(Math.random() * 10)}`, checkedOut: false, authorId: `${Math.floor(Math.random() * 3)}` })
+    return this.create({ title: `Sci-Fi Book Volume ${Math.floor(Math.random() * 10)}`, checkedOut: false, authorId: `${Math.floor(Math.random() * 3)}` })
 }
 
 Book.belongsTo(Author);

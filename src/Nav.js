@@ -6,7 +6,7 @@ const NavBar = (props)  => {
 
     return (
         <div id='nav'>
-            <a className='bookLink' href='/'> Books ({ books.length }) </a>
+            <a className='bookLink' href='/api/books'> Books ({ books.length }) </a>
             <a className='authorsLink' href='/'> Authors ({ authors.length }) </a>
         </div>
     )
